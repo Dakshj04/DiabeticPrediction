@@ -79,10 +79,10 @@ diabetes-prediction/
 - Model and scaler are serialized using pickle
 
 ## Performance Metrics
-- Accuracy: [Add your model's accuracy]
-- Precision: [Add precision score]
-- Recall: [Add recall score]
-- F1 Score: [Add F1 score]
+- Accuracy: 80.2
+- Precision: 56.45
+- Recall: 75
+- F1 Score: 65.45
 
 ## Contributing
 1. Fork the repository
@@ -90,9 +90,6 @@ diabetes-prediction/
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## License
-This project is licensed under the MIT License - see the LICENSE file for details
 
 ## Acknowledgments
 - Dataset: Pima Indians Diabetes Database
@@ -102,6 +99,6 @@ This project is licensed under the MIT License - see the LICENSE file for detail
 This tool is for educational purposes only and should not be used as a substitute for professional medical advice.
 
 ## Author
-[Your Name]
-[Your Email/Contact Information]
-[Your LinkedIn Profile]
+Daksh Jain
+0408jaindaksh@gmail.com 
+https://www.linkedin.com/in/daksh-jain-7a4327259
