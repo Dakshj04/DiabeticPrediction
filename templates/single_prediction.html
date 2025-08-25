@@ -4,18 +4,85 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Diabetes Prediction Result</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .result-card {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 90%;
+            text-align: center;
+        }
+        .result-icon {
+            font-size: 4rem;
+            margin-bottom: 1.5rem;
+        }
+        .result-diabetic {
+            color: #dc3545;
+        }
+        .result-non-diabetic {
+            color: #198754;
+        }
+        .btn-action {
+            margin: 10px;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        .btn-action:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+    </style>
 </head>
 <body>
-            <div class="container mt-5">
-                <div class="row justify-content-center">
-                    <div class="col-md-6 text-center">
-                        <div class="alert alert-info">
-                            <h2>The Patient is {{result}}</h2>
-                        </div>
-                    </div>
+    <div class="container">
+        <div class="result-card">
+            {% if result == 'Diabetic' %}
+                <i class="fas fa-exclamation-circle result-icon result-diabetic"></i>
+                <h2 class="mb-4 text-danger">Diabetes Risk Detected</h2>
+                <p class="lead mb-4">Based on the provided parameters, you show indicators of diabetes risk.</p>
+                <div class="alert alert-danger" role="alert">
+                    <strong>Important:</strong> Please consult with a healthcare professional for proper medical evaluation.
                 </div>
+            {% else %}
+                <i class="fas fa-check-circle result-icon result-non-diabetic"></i>
+                <h2 class="mb-4 text-success">No Diabetes Risk Detected</h2>
+                <p class="lead mb-4">Based on the provided parameters, you show no significant indicators of diabetes risk.</p>
+                <div class="alert alert-success" role="alert">
+                    <strong>Great!</strong> Continue maintaining a healthy lifestyle.
+                </div>
+            {% endif %}
+
+            <div class="mt-4">
+                <a href="/predictdata" class="btn btn-primary btn-action">
+                    <i class="fas fa-redo me-2"></i>Try Another Assessment
+                </a>
+                <a href="/" class="btn btn-secondary btn-action">
+                    <i class="fas fa-home me-2"></i>Return Home
+                </a>
             </div>
-</div>
+
+            <div class="mt-4 pt-3 border-top">
+                <small class="text-muted">
+                    <i class="fas fa-info-circle me-1"></i>
+                    This assessment is for informational purposes only and should not be considered as medical advice.
+                </small>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
